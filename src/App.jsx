@@ -1,9 +1,9 @@
-import "./App.css";
+import Root from "./components/Root";
 
 function App() {
   return (
     <>
-      <h1 className="text-red-600">Vite + React</h1>
+      <Root></Root>
     </>
   );
 }
