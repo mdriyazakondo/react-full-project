@@ -10,9 +10,9 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <nav className="bg-green-800 text-white py-4 md:py-6 px-10 relative">
+    <nav className="bg-green-800 text-white py-4 md:py-6 px-10 sticky top-0 z-10">
       <div className="container mx-auto flex justify-between items-center ">
-        <h1 className="text-2xl font-bold">React Practice</h1>
+        <h1 className="text-3xl font-bold ">React Practice</h1>
         {/* Mobile Responsive */}
         <div className="md:hidden">
           <button onClick={toggleMenu}>
@@ -21,22 +21,46 @@ const Navbar = () => {
         </div>
         <ul className="hidden md:flex space-x-4 md:space-x-6">
           <li>
-            <Link to="#">Home</Link>
+            <Link to="/" className="hover:text-green-500 text-xl font-semibold">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="#">Products</Link>
+            <Link
+              to="/products"
+              className="hover:text-green-500 text-xl font-semibold"
+            >
+              Products
+            </Link>
           </li>
           <li>
-            <Link to="#">Blogs</Link>
+            <Link
+              to="/blogs"
+              className="hover:text-green-500 text-xl font-semibold"
+            >
+              Blogs
+            </Link>
           </li>
           <li>
-            <Link to="#">Contacts</Link>
+            <Link
+              to="/contacts"
+              className="hover:text-green-500 text-xl font-semibold"
+            >
+              Contacts
+            </Link>
           </li>
           <li>
-            <Link to="#">About</Link>
+            <Link
+              to="/about"
+              className="hover:text-green-500 text-xl font-semibold"
+            >
+              About
+            </Link>
           </li>
         </ul>
-        <button className="hidden md:block">Login</button>
+        <button className="hidden md:block cursor-pointer border-2 border-gray-200 px-6 py-2 rounded-xl text-xl hover:bg-white hover:text-black font-semibold">
+          Login
+        </button>
 
         <div
           className={`md:hidden w-full bg-green-600 top-full left-0 absolute ${
@@ -44,13 +68,50 @@ const Navbar = () => {
           }`}
         >
           <ul className="flex flex-col items-center py-4 space-y-4">
-            <li>Home</li>
-            <li>Products</li>
-            <li>Blogs</li>
-            <li>Contacts</li>
-            <li>About</li>
             <li>
-              <button className="">Login</button>
+              <Link
+                to="/"
+                className="hover:text-green-500 text-xl font-semibold"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/products"
+                className="hover:text-green-500 text-xl font-semibold"
+              >
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/blogs"
+                className="hover:text-green-500 text-xl font-semibold"
+              >
+                Blogs
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contacts"
+                className="hover:text-green-500 text-xl font-semibold"
+              >
+                Contacts
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                className="hover:text-green-500 text-xl font-semibold"
+              >
+                About
+              </Link>
+            </li>
+            <li className="cursor-pointer">
+              <button className="cursor-pointer  border-2 border-gray-200 px-6 py-2 rounded-xl text-xl hover:bg-white hover:text-black font-semibold">
+                Login
+              </button>
             </li>
           </ul>
         </div>
