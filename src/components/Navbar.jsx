@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("/");
+  const location = useLocation();
+  useEffect(() => {
+    setActiveLink(location.pathname || "/");
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+  const handleLinkClick = (path) => {
+    setActiveLink(path);
   };
   return (
     <nav className="bg-green-800 text-white py-4 md:py-6 px-10 sticky top-0 z-10">
@@ -21,14 +29,27 @@ const Navbar = () => {
         </div>
         <ul className="hidden md:flex space-x-4 md:space-x-6">
           <li>
-            <Link to="/" className="hover:text-green-500 text-xl font-semibold">
+            <Link
+              to="/"
+              onClick={() => handleLinkClick("/")}
+              className={`${
+                activeLink === "/"
+                  ? "text-green-500 text-xl font-semibold"
+                  : "hover:text-green-500 text-xl font-semibold"
+              }`}
+            >
               Home
             </Link>
           </li>
           <li>
             <Link
               to="/products"
-              className="hover:text-green-500 text-xl font-semibold"
+              onClick={() => handleLinkClick("/products")}
+              className={`${
+                activeLink === "/products"
+                  ? "text-green-500 text-xl font-semibold"
+                  : "hover:text-green-500 text-xl font-semibold"
+              }`}
             >
               Products
             </Link>
@@ -36,7 +57,12 @@ const Navbar = () => {
           <li>
             <Link
               to="/blogs"
-              className="hover:text-green-500 text-xl font-semibold"
+              onClick={() => handleLinkClick("/blogs")}
+              className={`${
+                activeLink === "/blogs"
+                  ? "text-green-500 text-xl font-semibold"
+                  : "hover:text-green-500 text-xl font-semibold"
+              }`}
             >
               Blogs
             </Link>
@@ -44,7 +70,12 @@ const Navbar = () => {
           <li>
             <Link
               to="/contacts"
-              className="hover:text-green-500 text-xl font-semibold"
+              onClick={() => handleLinkClick("/contacts")}
+              className={`${
+                activeLink === "/contacts"
+                  ? "text-green-500 text-xl font-semibold"
+                  : "hover:text-green-500 text-xl font-semibold"
+              }`}
             >
               Contacts
             </Link>
@@ -52,7 +83,12 @@ const Navbar = () => {
           <li>
             <Link
               to="/about"
-              className="hover:text-green-500 text-xl font-semibold"
+              onClick={() => handleLinkClick("/about")}
+              className={`${
+                activeLink === "/about"
+                  ? "text-green-500 text-xl font-semibold"
+                  : "hover:text-green-500 text-xl font-semibold"
+              }`}
             >
               About
             </Link>
