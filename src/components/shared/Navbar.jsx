@@ -94,9 +94,11 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <button className="hidden md:block cursor-pointer border-2 border-gray-200 px-6 py-2 rounded-xl text-xl hover:bg-white hover:text-black font-semibold">
-          Login
-        </button>
+        <Link className="hidden md:block" to={"/login"}>
+          <button className="  cursor-pointer border-2 border-gray-200 px-6 py-2 rounded-xl text-xl hover:bg-white hover:text-black font-semibold">
+            Login
+          </button>
+        </Link>
 
         <div
           className={`md:hidden w-full bg-green-600 top-full left-0 absolute ${
@@ -107,7 +109,12 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className="hover:text-green-500 text-xl font-semibold"
+                onClick={() => handleLinkClick("/")}
+                className={`${
+                  activeLink === "/"
+                    ? "text-green-500 text-xl font-semibold"
+                    : "hover:text-green-500 text-xl font-semibold"
+                }`}
               >
                 Home
               </Link>
@@ -115,7 +122,12 @@ const Navbar = () => {
             <li>
               <Link
                 to="/products"
-                className="hover:text-green-500 text-xl font-semibold"
+                onClick={() => handleLinkClick("/products")}
+                className={`${
+                  activeLink === "/products"
+                    ? "text-green-500 text-xl font-semibold"
+                    : "hover:text-green-500 text-xl font-semibold"
+                }`}
               >
                 Products
               </Link>
@@ -123,7 +135,12 @@ const Navbar = () => {
             <li>
               <Link
                 to="/blogs"
-                className="hover:text-green-500 text-xl font-semibold"
+                onClick={() => handleLinkClick("/blogs")}
+                className={`${
+                  activeLink === "/blogs"
+                    ? "text-green-500 text-xl font-semibold"
+                    : "hover:text-green-500 text-xl font-semibold"
+                }`}
               >
                 Blogs
               </Link>
@@ -131,7 +148,12 @@ const Navbar = () => {
             <li>
               <Link
                 to="/contacts"
-                className="hover:text-green-500 text-xl font-semibold"
+                onClick={() => handleLinkClick("/contacts")}
+                className={`${
+                  activeLink === "/contacts"
+                    ? "text-green-500 text-xl font-semibold"
+                    : "hover:text-green-500 text-xl font-semibold"
+                }`}
               >
                 Contacts
               </Link>
@@ -139,15 +161,22 @@ const Navbar = () => {
             <li>
               <Link
                 to="/about"
-                className="hover:text-green-500 text-xl font-semibold"
+                onClick={() => handleLinkClick("/about")}
+                className={`${
+                  activeLink === "/about"
+                    ? "text-green-500 text-xl font-semibold"
+                    : "hover:text-green-500 text-xl font-semibold"
+                }`}
               >
                 About
               </Link>
             </li>
             <li className="cursor-pointer">
-              <button className="cursor-pointer  border-2 border-gray-200 px-6 py-2 rounded-xl text-xl hover:bg-white hover:text-black font-semibold">
-                Login
-              </button>
+              <Link to={"/login"}>
+                <button className="cursor-pointer  border-2 border-gray-200 px-6 py-2 rounded-xl text-xl hover:bg-white hover:text-black font-semibold">
+                  Login
+                </button>
+              </Link>
             </li>
           </ul>
         </div>
