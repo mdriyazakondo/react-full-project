@@ -2,14 +2,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div
-      className="flex flex-col justify-center items-center px-4 text-white text-center h-[100vh] space-y-8"
-      style={{
-        backgroundImage: "url('/src/assets/bg-img.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="flex flex-col justify-center items-center px-4 text-white text-center h-[100vh] space-y-8 bg-[url('/src/assets/bg-img.jpg')] bg-cover bg-center">
       <h1 className="text-4xl md:text-6xl font-semibold">
         Welcome to My Website
       </h1>
