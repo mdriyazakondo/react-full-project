@@ -3,7 +3,7 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div
-      className="flex flex-col justify-center items-center px-4 text-white text-center h-[90vh] space-y-8"
+      className="flex flex-col justify-center items-center px-4 text-white text-center h-[100vh] space-y-8"
       style={{
         backgroundImage: "url('/src/assets/bg-img.jpg')",
         backgroundSize: "cover",

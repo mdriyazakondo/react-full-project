@@ -15,56 +15,54 @@ const Register = () => {
   return (
     <div className="bg-green-950">
       <div className="max-w-3xl mx-auto p-6 md:p-20 ">
-        <div className="border-2 p-4 md:p-8   rounded-2xl  border-gray-600 mx-4 bg-white">
-          <form onSubmit={handlerSubmitRegister} className=" space-y-8 ">
+        <div className="border-2 p-4 md:p-8 mt-20  rounded-2xl  border-gray-600 mx-4 bg-white">
+          <form onSubmit={handlerSubmitRegister} className=" space-y-4 ">
             <h1 className=" text-2xl md:text-4xl text-gray-600 font-bold mb-12 text-center ">
               You Are Register Pages
             </h1>
             <div>
-              <h2 className="text-xl font-bold mb-2 text-gray-600">Name</h2>
               <input
                 type="text"
                 name="name"
                 id=""
                 placeholder="Your Name"
+                required
                 className="w-full py-2 pl-5 rounded-md border-2 outline-none border-gray-400 text-xl font-semibold"
               />
             </div>
             <div>
-              <h2 className="text-xl font-bold mb-2 text-gray-600">Email</h2>
               <input
                 type="email"
                 name="email"
                 id=""
                 placeholder="Your Email"
+                required
                 className="w-full py-2 pl-5 rounded-md border-2 outline-none border-gray-400 text-xl font-semibold"
               />
             </div>
             <div>
-              <h2 className="text-xl font-bold mb-2 text-gray-600">Password</h2>
               <input
                 type="password"
                 name="password"
                 id=""
                 placeholder="Your Password"
+                required
                 className="w-full py-2 pl-5 rounded-md border-2 outline-none border-gray-400 text-xl font-semibold"
               />
             </div>
             <div>
-              <h2 className="text-xl font-bold mb-2 text-gray-600">
-                Confirm Password
-              </h2>
               <input
                 type="password"
                 name="confirmPassword"
                 id=""
                 placeholder="Your Confirm Password"
+                required
                 className="w-full py-2 pl-5 rounded-md border-2 outline-none border-gray-400 text-xl font-semibold"
               />
             </div>
             <div className="flex justify-between items-center">
               <p>
-                <input type="checkbox" name="" id="checkbox" />
+                <input type="checkbox" name="" id="checkbox" required />
                 <label className="pl-2" htmlFor="checkbox">
                   Accept Terms &{" "}
                   <Link className="text-green-500">Conditions</Link>

@@ -18,7 +18,7 @@ const Navbar = () => {
     setActiveLink(path);
   };
   return (
-    <nav className="bg-green-800 text-white py-4 md:py-6 px-10 sticky top-0 z-10">
+    <nav className="bg-black/60 text-white py-4 md:py-6 px-10 fixed top-0 w-full">
       <div className="container mx-auto flex justify-between items-center ">
         <h1 className="text-3xl font-bold ">React Practice</h1>
         {/* Mobile Responsive */}
